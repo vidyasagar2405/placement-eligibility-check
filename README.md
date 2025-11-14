@@ -4,6 +4,9 @@
 
 This repository contains the complete **Placement Eligibility Workflow** built using **n8n**, designed to automate the process of evaluating student eligibility based on course selection and academic performance.
 
+## Demo Snapshot:
+<img width="1470" height="956" alt="Placements Eligibility snapshot" src="https://github.com/user-attachments/assets/dba221f2-c3c4-44f2-82ca-b200837187a3" />
+
 ## 🚀 **Features**
 
 * Course selection (Data Science / Data Analytics)
@@ -43,10 +46,6 @@ This repository contains the complete **Placement Eligibility Workflow** built u
 * Training institute evaluation automation
 * Academic workflow automation
 * No-code eligibility systems
-
-
-## Demo Snapshot:
-<img width="1470" height="956" alt="Placements Eligibility snapshot" src="https://github.com/user-attachments/assets/dba221f2-c3c4-44f2-82ca-b200837187a3" />
 
 
 # Demo Video:
