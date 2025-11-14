@@ -36,8 +36,7 @@ This repository contains the complete **Placement Eligibility Workflow** built u
 ## 📂 **Repository Includes**
 
 * Workflow JSON file
-* Screenshots of the flow
-* Explanation of each node
+* Screenshot of the workflow
 * Video execution link
 
 ## 📘 **Use Cases**
