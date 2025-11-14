@@ -1,0 +1,514 @@
+{
+  "name": "Placement Eligibility Task",
+  "nodes": [
+    {
+      "parameters": {
+        "formTitle": "Innomatics Placement Eligibility check",
+        "formDescription": "Hey, users please enter your marks module wise to calculate your average marks and know your eligibily.",
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Select your Course",
+              "fieldType": "radio",
+              "fieldOptions": {
+                "values": [
+                  {
+                    "option": "Data Science "
+                  },
+                  {
+                    "option": "Data Analytics"
+                  }
+                ]
+              },
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.formTrigger",
+      "typeVersion": 2.3,
+      "position": [
+        -544,
+        -96
+      ],
+      "id": "cb17469a-a84f-47c2-87ae-ad69d22f7caa",
+      "name": "Course selection form",
+      "webhookId": "c0eb12f3-1d24-4ed7-936f-6b8e65d5f1a3"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json['Select your Course'] }}",
+                    "rightValue": "Data Analytics",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "e41e9001-dd57-4621-bdd3-4cd7ce6b26a5"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "DA"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "9c41362e-d993-430a-b0bd-d90d0aea40f2",
+                    "leftValue": "={{ $json['Select your Course'] }}",
+                    "rightValue": "Data Science",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "DS"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        -320,
+        -96
+      ],
+      "id": "26f8f92a-1ed2-4566-8dcc-0e2a7df11f50",
+      "name": "switch to corresponding course"
+    },
+    {
+      "parameters": {
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Enter your marks for PYTHON",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for EDA",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for SQL",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for POWER BI",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for ADVANCE STATISTICS",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.3,
+      "position": [
+        -48,
+        -336
+      ],
+      "id": "7b62f7d9-dee4-4e8b-a1b8-21ce256b7fb8",
+      "name": "Data Analytics Marks",
+      "webhookId": "40e309cc-6c74-4ea7-9e22-91ec54c5b766"
+    },
+    {
+      "parameters": {
+        "formFields": {
+          "values": [
+            {
+              "fieldLabel": "Enter your marks for PYTHON",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for EDA",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for SQL",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for POWER BI",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for ADVANCE STATISTICS",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for MACHINE LEARNING",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for ANN",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for CNN",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for NLP",
+              "fieldType": "number",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            },
+            {
+              "fieldLabel": "Enter your marks for GEN AI",
+              "placeholder": "1 - 100",
+              "requiredField": true
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.3,
+      "position": [
+        -64,
+        112
+      ],
+      "id": "5caa37fa-9e6e-4cf4-ab21-6d4cfb9473ef",
+      "name": "Data Science Marks",
+      "webhookId": "838105b9-4501-4e7b-b720-d6371d9aaa74"
+    },
+    {
+      "parameters": {
+        "language": "pythonNative",
+        "pythonCode": "Python = _items[0][\"json\"]['Enter your marks for PYTHON']\nEDA  = _items[0][\"json\"]['Enter your marks for EDA']\nSQL = _items[0][\"json\"]['Enter your marks for SQL']\nPOWERBI = _items[0][\"json\"]['Enter your marks for POWER BI']\nADV_STATS = _items[0][\"json\"]['Enter your marks for ADVANCE STATISTICS']\n\n\nmarks = [ Python, EDA, SQL, POWERBI, ADV_STATS ]\nmodules = [ \"Python\", \"EDA\", \"SQL\", \"POWERBI\", \"ADV_STATS\"]\n\nweek = []\nint_marks = []\n\nfor m in range(len(marks)) :\n  int_marks.append(int(marks[m]))\n  if int(marks[m]) <= 70 :\n    week.append(modules[m])\n\navg_marks = round(sum(int_marks)/len(marks))\nif avg_marks > 70:\n  if len(week) == 0 :\n    check = \"🎉 Congratulations!, You are Eligible for the Placement Drive, You are ok in all the Modules\"\n  else :\n    check = f\"🎉 Congratulations!, You are Eligible for the Placement Drive. But,\\n Need to Improve in : {week}\"\nelse :\n  check = f\"Not Eligible, Please focus on modules : {week}\"\n    \n  \nreturn [{\"PYTHON\" : _items[0][\"json\"]['Enter your marks for PYTHON'],\n         \"EDA\" : _items[0][\"json\"]['Enter your marks for EDA'],\n         \"SQL\" : _items[0][\"json\"]['Enter your marks for SQL'],\n         \"POWER BI\" : _items[0][\"json\"]['Enter your marks for POWER BI'],\n         \"Advance Statistics\" : _items[0][\"json\"]['Enter your marks for ADVANCE STATISTICS'],\n         \"AVERAGE MARKS\" : avg_marks,\n         \"Eligibility\" : check }]"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        -336
+      ],
+      "id": "0ecf8fe4-9196-4d13-806c-db37ba6e27a6",
+      "name": "Calculating Average Marks"
+    },
+    {
+      "parameters": {
+        "language": "pythonNative",
+        "pythonCode": "Python = _items[0][\"json\"]['Enter your marks for PYTHON']\nEDA  = _items[0][\"json\"]['Enter your marks for EDA']\nSQL = _items[0][\"json\"]['Enter your marks for SQL']\nPOWERBI = _items[0][\"json\"]['Enter your marks for POWER BI']\nADV_STATS = _items[0][\"json\"]['Enter your marks for ADVANCE STATISTICS']\nML = _items[0][\"json\"]['Enter your marks for MACHINE LEARNING']\nANN = _items[0][\"json\"]['Enter your marks for ANN']\nCNN = _items[0][\"json\"]['Enter your marks for CNN']\nNLP = _items[0][\"json\"]['Enter your marks for NLP']\nGEN_AI = _items[0][\"json\"]['Enter your marks for GEN AI']\n\n\nmarks = [ Python, EDA, SQL, POWERBI, ADV_STATS, ML, ANN, CNN, GEN_AI ]\nmodules = [ \"Python\", \"EDA\", \"SQL\", \"POWERBI\", \"ADV_STATS\", \"ML\", \"ANN\", \"CNN\", \"GEN_AI\" ]\n\nweek = []\nint_marks = []\n\nfor m in range(len(marks)) :\n  int_marks.append(int(marks[m]))\n  if int(marks[m]) <= 70 :\n    week.append(modules[m])\n\navg_marks = round(sum(int_marks)/len(marks),2)\nif avg_marks > 70:\n  if len(week) == 0 :\n    check = \"🎉 Congratulations!, You are Eligible for the Placement Drive, You are ok in all the Modules\"\n  else :\n    check = f\"🎉 Congratulations!, You are Eligible for the Placement Drive. But,\\n Need to Improve in : {week}\"\nelse :\n  check = f\"Not Eligible, Please focus on modules : {week}\"\n    \n  \nreturn [{\"PYTHON\" : _items[0][\"json\"]['Enter your marks for PYTHON'],\n         \"EDA\" : _items[0][\"json\"]['Enter your marks for EDA'],\n         \"SQL\" : _items[0][\"json\"]['Enter your marks for SQL'],\n         \"POWER BI\" : _items[0][\"json\"]['Enter your marks for POWER BI'],\n         \"Advance Statistics\" : _items[0][\"json\"]['Enter your marks for ADVANCE STATISTICS'],\n         \"MACHINE LEARNING\" : _items[0][\"json\"]['Enter your marks for MACHINE LEARNING'],\n         \"ANN\" : _items[0][\"json\"]['Enter your marks for ANN'],\n         \"CNN\" : _items[0][\"json\"]['Enter your marks for CNN'],\n         \"NLP\" : _items[0][\"json\"]['Enter your marks for NLP'],\n         \"GEN AI\" : _items[0][\"json\"]['Enter your marks for GEN AI'],\n         \"AVERAGE MARKS\" : avg_marks,\n         \"Eligibility\" : check }]"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        208,
+        112
+      ],
+      "id": "1547d1e4-323a-435a-9770-c62369ca2a1e",
+      "name": "Calculating Average marks"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "243605b4-9ce4-4e41-8364-9e031bb5e677",
+              "leftValue": "={{ $json['AVERAGE MARKS'] }}",
+              "rightValue": 70,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        464,
+        -336
+      ],
+      "id": "88d724b1-c4c9-4588-a1c1-3167f5e70918",
+      "name": "Checking Eligibility"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "243605b4-9ce4-4e41-8364-9e031bb5e677",
+              "leftValue": "={{ $json['AVERAGE MARKS'] }}",
+              "rightValue": 70,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        480,
+        112
+      ],
+      "id": "eb3f86be-728f-49c0-ab7e-35e2f07b55c1",
+      "name": "Cheking Eligibility"
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "completionTitle": "Innomatics Placement Eligibility check",
+        "completionMessage": "={{ $json.Eligibility }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.3,
+      "position": [
+        736,
+        -448
+      ],
+      "id": "8beb1fe4-d50b-47c9-8b24-d8f93e35ba98",
+      "name": "Eligible",
+      "webhookId": "beb300b8-527e-4d07-8def-2ff38e259a8a"
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "completionTitle": "Innomatics Placement Eligibility check",
+        "completionMessage": "={{ $json.Eligibility }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.3,
+      "position": [
+        736,
+        -224
+      ],
+      "id": "efa5add1-6261-4bf6-b1a9-7413ac19a7f5",
+      "name": "Not Eligible",
+      "webhookId": "beb300b8-527e-4d07-8def-2ff38e259a8a"
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "completionTitle": "Eligibility Check for Placements",
+        "completionMessage": "={{ $json.Eligibility }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.3,
+      "position": [
+        736,
+        -16
+      ],
+      "id": "fd667031-c6e0-4d37-a175-0ca14ebf717c",
+      "name": "Eligible1",
+      "webhookId": "beb300b8-527e-4d07-8def-2ff38e259a8a"
+    },
+    {
+      "parameters": {
+        "operation": "completion",
+        "completionTitle": "Innomatics Placement Eligibility check",
+        "completionMessage": "={{ $('Calculating Average marks').item.json.Eligibility }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.form",
+      "typeVersion": 2.3,
+      "position": [
+        736,
+        224
+      ],
+      "id": "826c3221-4826-4153-a0f5-be1ea35c8086",
+      "name": "Not Eligible1",
+      "webhookId": "beb300b8-527e-4d07-8def-2ff38e259a8a"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Course selection form": {
+      "main": [
+        [
+          {
+            "node": "switch to corresponding course",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "switch to corresponding course": {
+      "main": [
+        [
+          {
+            "node": "Data Analytics Marks",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Data Science Marks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data Analytics Marks": {
+      "main": [
+        [
+          {
+            "node": "Calculating Average Marks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Data Science Marks": {
+      "main": [
+        [
+          {
+            "node": "Calculating Average marks",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculating Average Marks": {
+      "main": [
+        [
+          {
+            "node": "Checking Eligibility",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calculating Average marks": {
+      "main": [
+        [
+          {
+            "node": "Cheking Eligibility",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Checking Eligibility": {
+      "main": [
+        [
+          {
+            "node": "Eligible",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Not Eligible",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Cheking Eligibility": {
+      "main": [
+        [
+          {
+            "node": "Eligible1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Not Eligible1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "d2da10fe-2193-48cc-a4f6-f57086c060e6",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "69218a4a713fe483ed9463e4d9ee7c6fb92bc5d6ba37518d0af6f3f8dbc83f41"
+  },
+  "id": "AHaRfPuEH9dbIWgD",
+  "tags": []
+}
