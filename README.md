@@ -1,5 +1,3 @@
-# n8n-Automation-Placement-Eligibility-Check
-
 # 🎓 Placement Eligibility Automation – n8n Workflow
 
 This repository contains the complete **Placement Eligibility Workflow** built using **n8n**, designed to automate the process of evaluating student eligibility based on course selection and academic performance.
@@ -48,4 +46,4 @@ This repository contains the complete **Placement Eligibility Workflow** built u
 
 
 # Demo Video:
-[demo video](https://youtu.be/3sYPPzyRT3I)
+## [Video](https://youtu.be/3sYPPzyRT3I)
